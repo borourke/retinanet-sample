@@ -9,6 +9,9 @@ import csv
 
 CLASSES = set()
 
+MAX_TRAINING_DATA = 750
+MAX_TESTING_DATA = 250
+
 #
 # TRAINING DATA
 #
@@ -41,6 +44,8 @@ for directory in train_images_directories:
                     xmax = float(annotations[1])*256+x_offset
                     ymax = float(annotations[2])*256+y_offset
                     if(xmin > 256 or xmin < 1 or ymin > 256 or ymin < 1 or xmax > 256 or xmax < 1 or ymax > 256 or ymax < 1):
+                        next
+                    elif(len(training_data) > MAX_TRAINING_DATA):
                         next
                     else:
                         training_data.append([absolute_image_location, int(xmin), int(ymin), int(xmax), int(ymax), int(label)])
@@ -86,6 +91,8 @@ for directory in test_images_directories:
                     xmax = float(annotations[1])*256+x_offset
                     ymax = float(annotations[2])*256+y_offset
                     if(xmin > 256 or xmin < 1 or ymin > 256 or ymin < 1 or xmax > 256 or xmax < 1 or ymax > 256 or ymax < 1):
+                        next
+                    elif(len(testing_data) > MAX_TESTING_DATA):
                         next
                     else:
                         testing_data.append([absolute_image_location, int(xmin), int(ymin), int(xmax), int(ymax), int(label)])
