@@ -2,7 +2,7 @@
 from keras_retinanet.utils.image import preprocess_image
 from keras_retinanet.utils.image import read_image_bgr
 from keras_retinanet.utils.image import resize_image
-from config import esri_retinanet_config as config
+from config import bryan_retinanet_config as config
 from keras_retinanet import models
 from imutils import paths
 import numpy as np
