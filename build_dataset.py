@@ -35,6 +35,7 @@ for directory in train_images_directories:
             absolute_image_location = "images/train/"+directory+"/"+image_name+".jpg"
             with open(os.path.sep.join([image_path, filename]), "r") as ifile:
                 for line in ifile:
+                    print(line)
                     annotations = line.split()
                     label = annotations[0]
                     x_offset = float(annotations[3])/2*256
@@ -82,6 +83,7 @@ for directory in test_images_directories:
             absolute_image_location = "images/test/"+directory+"/"+image_name+".jpg"
             with open(os.path.sep.join([image_path, filename]), "r") as ifile:
                 for line in ifile:
+                    print(line)
                     annotations = line.split()
                     label = annotations[0]
                     x_offset = float(annotations[3])/2*256
