@@ -58,11 +58,11 @@ for directory in train_images_directories:
         else:
             next
 
-random.shuffle(training_data)
-random.shuffle(testing_data)
+# random.shuffle(training_data)
+# random.shuffle(testing_data)
 
-training_data = training_data[:15000]
-testing_data = testing_data[:5000]
+# training_data = training_data[:15000]
+# testing_data = testing_data[:5000]
 
 with open('dataset/train.csv','w') as f:
     writer = csv.writer(f)
