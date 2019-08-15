@@ -14,4 +14,6 @@ retinanet-convert-model <path/to/desired/snapshot.h5> <path/to/output/model.h5>
 # To evaluate the model
 retinanet-evaluate <path/to/output/model.h5> csv <path/to/train.csv> <path/to/classes.csv>
 
+python predict.py --model models/output.h5 --input dataset/submission_test_data_images --confidence 0.0
+
 
