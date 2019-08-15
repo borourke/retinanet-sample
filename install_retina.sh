@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
 # Install the required libraries
-pip install numpy scipy h5py
-pip install scikit-learn Pillow imutils
-pip install beautifulsoup4
-pip install tensorflow-gpu
-pip install keras
-pip install opencv-contrib-python
+sudo pip install numpy scipy h5py
+sudo pip install scikit-learn Pillow imutils
+sudo pip install beautifulsoup4
+sudo pip install tensorflow-gpu
+sudo pip install keras
+sudo pip install opencv-contrib-python
 
 # Install Retinanet
 cd ~
