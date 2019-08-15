@@ -24,6 +24,8 @@ print("[INFO] Train Images Files: '{}'".format(train_images_directories))
 
 training_data = []
 
+count = 0
+
 for directory in train_images_directories:
     print("[INFO] - current directory: '{}'".format(directory))
     image_path = os.path.sep.join([train_images_path, directory])
@@ -35,7 +37,8 @@ for directory in train_images_directories:
             absolute_image_location = "images/train/"+directory+"/"+image_name+".jpg"
             with open(os.path.sep.join([image_path, filename]), "r") as ifile:
                 for line in ifile:
-                    print(line)
+                    count += 1
+                    print(count)
                     annotations = line.split()
                     label = annotations[0]
                     x_offset = float(annotations[3])/2*256
@@ -72,6 +75,8 @@ print("[INFO] Test Images Files: '{}'".format(test_images_directories))
 
 testing_data = []
 
+count = 0
+
 for directory in test_images_directories:
     print("[INFO] - current directory: '{}'".format(directory))
     image_path = os.path.sep.join([test_images_path, directory])
@@ -83,7 +88,8 @@ for directory in test_images_directories:
             absolute_image_location = "images/test/"+directory+"/"+image_name+".jpg"
             with open(os.path.sep.join([image_path, filename]), "r") as ifile:
                 for line in ifile:
-                    print(line)
+                    count += 1
+                    print(count)
                     annotations = line.split()
                     label = annotations[0]
                     x_offset = float(annotations[3])/2*256
