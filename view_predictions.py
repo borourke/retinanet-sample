@@ -14,9 +14,9 @@ for image in real_images:
     img = cv2.imread(os.path.sep.join([real_images_path, image]))
     with open(os.path.sep.join([predictions_path, text_name]), "r") as ifile:
         for line in ifile:
-            # 4 0.53558475 1005 824 1186 1000
+            # <classname>-0 <confidence>-1 <ymin>-2 <xmin>-3 <ymax>-4 <xmax>-5
             annotations = line.split()
-            top_left = (int(annotations[2]), int(annotations[3]))
-            bottom_right = (int(annotations[4]), int(annotations[5]))
+            top_left = (int(annotations[3]), int(annotations[4]))
+            bottom_right = (int(annotations[5]), int(annotations[2]))
             img = cv2.rectangle(img, top_left, bottom_right, (0,255,0), 2)
     cv2.imwrite(os.path.sep.join([predictions_path, image]), img)
